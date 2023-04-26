@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "Record of boxes built with florianfesti's boxes"
 authors = ["Seth Fischer <seth@fischer.nz>"]
 license = "MIT"
-readme = "README.md"
+readme = "README.rst"
 packages = [{include = "boxes_builds"}]
 
 [tool.poetry.dependencies]
