@@ -79,13 +79,14 @@ develop = false
 [package.dependencies]
 affine = ">=2.0"
 markdown = "*"
+qrcode = "7.3.1"
 shapely = ">=1.8.2"
 
 [package.source]
 type = "git"
 url = "https://github.com/florianfesti/boxes.git"
-reference = "bf6e55bb364bbb9f12f5f242dae821b3b0271240"
-resolved_reference = "bf6e55bb364bbb9f12f5f242dae821b3b0271240"
+reference = "86a8bf481d8d81f484443142f6649d9c2d4a3645"
+resolved_reference = "86a8bf481d8d81f484443142f6649d9c2d4a3645"
 
 [[package]]
 name = "click"
@@ -391,4 +392,4 @@ testing = ["big-O", "flake8 (<5)", "jaraco.functools", "jaraco.itertools", "more
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "5a951865c5f6091415fadd6864ddf0b699b8465e1a19c34f89bb793894e62260"
+content-hash = "fc807ad3891ab71e36f099b24fc59fea29ea5611ed3e29f831147bd88a163e4e"

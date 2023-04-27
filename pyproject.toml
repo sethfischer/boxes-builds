@@ -5,13 +5,11 @@ description = "Record of boxes built with florianfesti's boxes"
 authors = ["Seth Fischer <seth@fischer.nz>"]
 license = "MIT"
 readme = "README.rst"
-packages = [{include = "boxes_builds"}]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-boxes = {git = "https://github.com/florianfesti/boxes.git", rev = "bf6e55bb364bbb9f12f5f242dae821b3b0271240"}
+boxes = {git = "https://github.com/florianfesti/boxes.git", rev = "86a8bf481d8d81f484443142f6649d9c2d4a3645"}
 invoke = "^2.0.0"
-qrcode = "7.3.1"  # https://github.com/florianfesti/boxes/pull/554
 
 [tool.poetry.group.dev.dependencies]
 black = "^23.3.0"
