@@ -9,6 +9,8 @@ packages = [{include = "boxes_builds"}]
 
 [tool.poetry.dependencies]
 python = "^3.9"
+qrcode = "7.3.1"  # https://github.com/florianfesti/boxes/pull/554
+boxes = {git = "https://github.com/florianfesti/boxes.git", rev = "bf6e55bb364bbb9f12f5f242dae821b3b0271240"}
 
 
 [build-system]
