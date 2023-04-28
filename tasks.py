@@ -21,12 +21,18 @@ def output(slug: str, extension="svg") -> Path:
 
 
 @task
+def mkdir_build(c):
+    """Create build directory."""
+    c.run(f"mkdir -p {BUILD_DIR}")
+
+
+@task(pre=[mkdir_build])
 def clean(c):
     """Clean build directory."""
-    c.run("rm -rf _build/*")
+    c.run(f"rm -rf {BUILD_DIR}/*.svg")
 
 
-@task
+@task(pre=[mkdir_build])
 def sharpening_stone(c):
     """Sharpening stone two piece box."""
     internal_x = 215
@@ -39,7 +45,7 @@ def sharpening_stone(c):
     )
 
 
-@task
+@task(pre=[mkdir_build])
 def slip_stone(c):
     """Slip stone two piece box."""
     internal_x = 118
