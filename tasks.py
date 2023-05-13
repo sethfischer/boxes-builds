@@ -40,7 +40,7 @@ def sharpening_stone(c):
     internal_h = 30
 
     c.run(
-        f"boxes TwoPiece --output {output('sharpening_stone')} "
+        f"boxes TwoPiece --outside=0 --output {output('sharpening_stone')} "
         f"--x={internal_x} --y={internal_y} --h={internal_h}"
     )
 
@@ -53,6 +53,6 @@ def slip_stone(c):
     internal_h = 15
 
     c.run(
-        f"boxes TwoPiece --output {output('slip_stone')} "
+        f"boxes TwoPiece --outside=0 --output {output('slip_stone')} "
         f"--x={internal_x} --y={internal_y} --h={internal_h}"
     )
