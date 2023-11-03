@@ -75,8 +75,8 @@ shapely = ">=1.8.2"
 [package.source]
 type = "git"
 url = "https://github.com/florianfesti/boxes.git"
-reference = "86a8bf481d8d81f484443142f6649d9c2d4a3645"
-resolved_reference = "86a8bf481d8d81f484443142f6649d9c2d4a3645"
+reference = "2ab7fc909eec106af17bad9347289c07e626277c"
+resolved_reference = "2ab7fc909eec106af17bad9347289c07e626277c"
 
 [[package]]
 name = "click"
@@ -367,4 +367,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "fc807ad3891ab71e36f099b24fc59fea29ea5611ed3e29f831147bd88a163e4e"
+content-hash = "cfd3d7f7b2de4bfd7de5358ef352515ef6d5e040ee0f9b3bc5bc81917bca0f19"
