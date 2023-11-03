@@ -56,3 +56,13 @@ def slip_stone(c):
         f"boxes TwoPiece --outside=0 --output {output('slip_stone')} "
         f"--x={internal_x} --y={internal_y} --h={internal_h}"
     )
+
+
+@task(pre=[mkdir_build])
+def ottodiy(c):
+    """Otto DIY.
+
+    https://www.ottodiy.com/
+    """
+    c.run(f"boxes OttoBody --output={output('otto_body')}")
+    c.run(f"boxes OttoLegs --output={output('otto_legs')}")
