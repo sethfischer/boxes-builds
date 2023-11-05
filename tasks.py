@@ -78,9 +78,49 @@ def stationary_engine(c):
     lid_height = 10
 
     c.run(
-        f'boxes TrayLayout --outside=0 '
+        f"boxes TrayLayout --outside=0 "
         f'--h={height} --hi=0 --sx="{sections_x}" --sy="{sections_y}" '
         f'--input="layouts/stationary_engine.txt" '
         f'--Lid_style="overthetop" --Lid_height={lid_height} '
         f"--output={output('stationary_engine')}"
+    )
+
+
+@task(pre=[mkdir_build])
+def spool_din_100(c):
+    """DIN 100 wire spool."""
+    inner_height = 100 - (2 * 3)
+    outer_diameter = 100
+    inner_diameter = 64
+    axle_diameter = 16
+    sides = 16
+    reinforcements = 0
+    reinforcement_height = 0
+
+    c.run(
+        f"boxes Spool "
+        f'--h={inner_height} --outer_diameter="{outer_diameter}" --inner_diameter="{inner_diameter}" --axle_diameter="{axle_diameter}" '
+        f'--sides="{sides}" '
+        f'--reinforcements="{reinforcements}" --reinforcement_height="{reinforcement_height}" '
+        f"--output={output('spool_din_100')}"
+    )
+
+
+@task(pre=[mkdir_build])
+def spool_din_100_half(c):
+    """DIN 100 half-width wire spool."""
+    inner_height = (100 / 2) - (2 * 3)
+    outer_diameter = 100
+    inner_diameter = 64
+    axle_diameter = 16
+    sides = 16
+    reinforcements = 0
+    reinforcement_height = 0
+
+    c.run(
+        f"boxes Spool "
+        f'--h={inner_height} --outer_diameter="{outer_diameter}" --inner_diameter="{inner_diameter}" --axle_diameter="{axle_diameter}" '
+        f'--sides="{sides}" '
+        f'--reinforcements="{reinforcements}" --reinforcement_height="{reinforcement_height}" '
+        f"--output={output('spool_din_100_half')}"
     )
