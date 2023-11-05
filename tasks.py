@@ -108,7 +108,10 @@ def stationary_engine(c):
 
 @task(pre=[mkdir_build])
 def spool_din_100(c):
-    """DIN 100 wire spool."""
+    """DIN 100 wire spool.
+
+    Approximating spool type 100 defined in EN 60264-2-1:1996.
+    """
     thickness = 3
 
     inner_height = 100 - (2 * thickness)
@@ -131,7 +134,10 @@ def spool_din_100(c):
 
 @task(pre=[mkdir_build])
 def spool_din_100_half(c):
-    """DIN 100 half-width wire spool."""
+    """DIN 100 half-width wire spool.
+
+    Half-width spool based on type 100 defined in EN 60264-2-1:1996.
+    """
     thickness = 3
 
     inner_height = (100 / 2) - (2 * thickness)
@@ -154,7 +160,10 @@ def spool_din_100_half(c):
 
 @task(pre=[mkdir_build])
 def spool_din_80(c):
-    """DIN 80 wire spool."""
+    """DIN 80 wire spool.
+
+    Approximating spool type 80 defined in EN 60264-2-1:1996.
+    """
     thickness = 3
 
     inner_height = 80 - (2 * thickness)
@@ -177,7 +186,10 @@ def spool_din_80(c):
 
 @task(pre=[mkdir_build])
 def spool_din_80_half(c):
-    """DIN 80 half-width wire spool."""
+    """DIN 80 half-width wire spool.
+
+    Half-width spool based on type 80 defined in EN 60264-2-1:1996.
+    """
     thickness = 3
 
     inner_height = (80 / 2) - (2 * thickness)
