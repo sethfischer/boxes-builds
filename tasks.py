@@ -150,3 +150,49 @@ def spool_din_100_half(c):
         f'--reinforcements="{reinforcements}" --reinforcement_height="{reinforcement_height}" '
         f"--output={output('spool_din_100_half', thickness=thickness)}"
     )
+
+
+@task(pre=[mkdir_build])
+def spool_din_80(c):
+    """DIN 80 wire spool."""
+    thickness = 3
+
+    inner_height = 80 - (2 * thickness)
+    outer_diameter = 80
+    inner_diameter = 50
+    axle_diameter = 16
+    sides = 16
+    reinforcements = 0
+    reinforcement_height = 0
+
+    c.run(
+        f"boxes Spool "
+        f"--thickness={thickness} "
+        f'--h={inner_height} --outer_diameter="{outer_diameter}" --inner_diameter="{inner_diameter}" --axle_diameter="{axle_diameter}" '
+        f'--sides="{sides}" '
+        f'--reinforcements="{reinforcements}" --reinforcement_height="{reinforcement_height}" '
+        f"--output={output('spool_din_80', thickness=thickness)}"
+    )
+
+
+@task(pre=[mkdir_build])
+def spool_din_80_half(c):
+    """DIN 80 half-width wire spool."""
+    thickness = 3
+
+    inner_height = (80 / 2) - (2 * thickness)
+    outer_diameter = 80
+    inner_diameter = 50
+    axle_diameter = 16
+    sides = 16
+    reinforcements = 0
+    reinforcement_height = 0
+
+    c.run(
+        f"boxes Spool "
+        f"--thickness={thickness} "
+        f'--h={inner_height} --outer_diameter="{outer_diameter}" --inner_diameter="{inner_diameter}" --axle_diameter="{axle_diameter}" '
+        f'--sides="{sides}" '
+        f'--reinforcements="{reinforcements}" --reinforcement_height="{reinforcement_height}" '
+        f"--output={output('spool_din_80_half', thickness=thickness)}"
+    )
