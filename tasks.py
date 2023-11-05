@@ -1,4 +1,5 @@
 """Record of boxes.py builds."""
+from __future__ import annotations
 
 import os
 from pathlib import Path
@@ -8,9 +9,9 @@ from invoke import task
 BUILD_DIR = "_build"
 
 
-def output(slug: str, extension="svg") -> Path:
+def output(slug: str, thickness: float = 3, extension="svg") -> Path:
     """Generate output pathname."""
-    filename = f"{slug}.{extension}"
+    filename = f"{slug}_{thickness}mm.{extension}"
 
     client_id = os.environ.get("BOXES_CLIENT_ID", None)
 
