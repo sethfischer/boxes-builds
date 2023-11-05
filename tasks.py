@@ -66,3 +66,21 @@ def ottodiy(c):
     """
     c.run(f"boxes OttoBody --output={output('otto_body')}")
     c.run(f"boxes OttoLegs --output={output('otto_legs')}")
+
+
+@task(pre=[mkdir_build])
+def stationary_engine(c):
+    """Stationary engine box."""
+    height = 80
+    sections_x = "65:90"
+    sections_y = "25:55:130"
+
+    lid_height = 10
+
+    c.run(
+        f'boxes TrayLayout --outside=0 '
+        f'--h={height} --hi=0 --sx="{sections_x}" --sy="{sections_y}" '
+        f'--input="layouts/stationary_engine.txt" '
+        f'--Lid_style="overthetop" --Lid_height={lid_height} '
+        f"--output={output('stationary_engine')}"
+    )
