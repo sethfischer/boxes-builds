@@ -36,26 +36,34 @@ def clean(c):
 @task(pre=[mkdir_build])
 def sharpening_stone(c):
     """Sharpening stone two piece box."""
+    thickness = 3
+
     internal_x = 215
     internal_y = 60
     internal_h = 30
 
     c.run(
-        f"boxes TwoPiece --outside=0 --output {output('sharpening_stone')} "
-        f"--x={internal_x} --y={internal_y} --h={internal_h}"
+        f"boxes TwoPiece --outside=0 "
+        f"--thickness={thickness} "
+        f"--x={internal_x} --y={internal_y} --h={internal_h} "
+        f"--output={output('sharpening_stone', thickness=thickness)}"
     )
 
 
 @task(pre=[mkdir_build])
 def slip_stone(c):
     """Slip stone two piece box."""
+    thickness = 3
+
     internal_x = 118
     internal_y = 47
     internal_h = 15
 
     c.run(
-        f"boxes TwoPiece --outside=0 --output {output('slip_stone')} "
-        f"--x={internal_x} --y={internal_y} --h={internal_h}"
+        f"boxes TwoPiece --outside=0 "
+        f"--thickness={thickness} "
+        f"--x={internal_x} --y={internal_y} --h={internal_h} "
+        f"--output={output('slip_stone', thickness=thickness)}"
     )
 
 
@@ -65,13 +73,23 @@ def ottodiy(c):
 
     https://www.ottodiy.com/
     """
-    c.run(f"boxes OttoBody --output={output('otto_body')}")
-    c.run(f"boxes OttoLegs --output={output('otto_legs')}")
+    thickness = 3
+
+    c.run(
+        f"boxes OttoBody --thickness={thickness} "
+        f"--output={output('otto_body', thickness=thickness)}"
+    )
+    c.run(
+        f"boxes OttoLegs --thickness={thickness} "
+        f"--output={output('otto_legs', thickness=thickness)}"
+    )
 
 
 @task(pre=[mkdir_build])
 def stationary_engine(c):
     """Stationary engine box."""
+    thickness = 3
+
     height = 80
     sections_x = "65:90"
     sections_y = "25:55:130"
@@ -80,17 +98,20 @@ def stationary_engine(c):
 
     c.run(
         f"boxes TrayLayout --outside=0 "
+        f"--thickness={thickness} "
         f'--h={height} --hi=0 --sx="{sections_x}" --sy="{sections_y}" '
         f'--input="layouts/stationary_engine.txt" '
         f'--Lid_style="overthetop" --Lid_height={lid_height} '
-        f"--output={output('stationary_engine')}"
+        f"--output={output('stationary_engine', thickness=thickness)}"
     )
 
 
 @task(pre=[mkdir_build])
 def spool_din_100(c):
     """DIN 100 wire spool."""
-    inner_height = 100 - (2 * 3)
+    thickness = 3
+
+    inner_height = 100 - (2 * thickness)
     outer_diameter = 100
     inner_diameter = 64
     axle_diameter = 16
@@ -100,17 +121,20 @@ def spool_din_100(c):
 
     c.run(
         f"boxes Spool "
+        f"--thickness={thickness} "
         f'--h={inner_height} --outer_diameter="{outer_diameter}" --inner_diameter="{inner_diameter}" --axle_diameter="{axle_diameter}" '
         f'--sides="{sides}" '
         f'--reinforcements="{reinforcements}" --reinforcement_height="{reinforcement_height}" '
-        f"--output={output('spool_din_100')}"
+        f"--output={output('spool_din_100', thickness=thickness)}"
     )
 
 
 @task(pre=[mkdir_build])
 def spool_din_100_half(c):
     """DIN 100 half-width wire spool."""
-    inner_height = (100 / 2) - (2 * 3)
+    thickness = 3
+
+    inner_height = (100 / 2) - (2 * thickness)
     outer_diameter = 100
     inner_diameter = 64
     axle_diameter = 16
@@ -120,8 +144,9 @@ def spool_din_100_half(c):
 
     c.run(
         f"boxes Spool "
+        f"--thickness={thickness} "
         f'--h={inner_height} --outer_diameter="{outer_diameter}" --inner_diameter="{inner_diameter}" --axle_diameter="{axle_diameter}" '
         f'--sides="{sides}" '
         f'--reinforcements="{reinforcements}" --reinforcement_height="{reinforcement_height}" '
-        f"--output={output('spool_din_100_half')}"
+        f"--output={output('spool_din_100_half', thickness=thickness)}"
     )
