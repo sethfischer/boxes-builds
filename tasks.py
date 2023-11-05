@@ -46,7 +46,7 @@ def sharpening_stone(c):
         f"boxes TwoPiece --outside=0 "
         f"--thickness={thickness} "
         f"--x={internal_x} --y={internal_y} --h={internal_h} "
-        f"--output={output('sharpening_stone', thickness=thickness)}"
+        f"--output={output('sharpening-stone', thickness=thickness)}"
     )
 
 
@@ -63,7 +63,7 @@ def slip_stone(c):
         f"boxes TwoPiece --outside=0 "
         f"--thickness={thickness} "
         f"--x={internal_x} --y={internal_y} --h={internal_h} "
-        f"--output={output('slip_stone', thickness=thickness)}"
+        f"--output={output('slip-stone', thickness=thickness)}"
     )
 
 
@@ -77,11 +77,11 @@ def ottodiy(c):
 
     c.run(
         f"boxes OttoBody --thickness={thickness} "
-        f"--output={output('otto_body', thickness=thickness)}"
+        f"--output={output('otto-body', thickness=thickness)}"
     )
     c.run(
         f"boxes OttoLegs --thickness={thickness} "
-        f"--output={output('otto_legs', thickness=thickness)}"
+        f"--output={output('otto-legs', thickness=thickness)}"
     )
 
 
@@ -102,7 +102,7 @@ def stationary_engine(c):
         f'--h={height} --hi=0 --sx="{sections_x}" --sy="{sections_y}" '
         f'--input="layouts/stationary_engine.txt" '
         f'--Lid_style="overthetop" --Lid_height={lid_height} '
-        f"--output={output('stationary_engine', thickness=thickness)}"
+        f"--output={output('stationary-engine', thickness=thickness)}"
     )
 
 
@@ -125,7 +125,7 @@ def spool_din_100(c):
         f'--h={inner_height} --outer_diameter="{outer_diameter}" --inner_diameter="{inner_diameter}" --axle_diameter="{axle_diameter}" '
         f'--sides="{sides}" '
         f'--reinforcements="{reinforcements}" --reinforcement_height="{reinforcement_height}" '
-        f"--output={output('spool_din_100', thickness=thickness)}"
+        f"--output={output('spool-din-100', thickness=thickness)}"
     )
 
 
@@ -148,7 +148,7 @@ def spool_din_100_half(c):
         f'--h={inner_height} --outer_diameter="{outer_diameter}" --inner_diameter="{inner_diameter}" --axle_diameter="{axle_diameter}" '
         f'--sides="{sides}" '
         f'--reinforcements="{reinforcements}" --reinforcement_height="{reinforcement_height}" '
-        f"--output={output('spool_din_100_half', thickness=thickness)}"
+        f"--output={output('spool-din-100-half', thickness=thickness)}"
     )
 
 
@@ -171,7 +171,7 @@ def spool_din_80(c):
         f'--h={inner_height} --outer_diameter="{outer_diameter}" --inner_diameter="{inner_diameter}" --axle_diameter="{axle_diameter}" '
         f'--sides="{sides}" '
         f'--reinforcements="{reinforcements}" --reinforcement_height="{reinforcement_height}" '
-        f"--output={output('spool_din_80', thickness=thickness)}"
+        f"--output={output('spool-din-80', thickness=thickness)}"
     )
 
 
@@ -194,5 +194,5 @@ def spool_din_80_half(c):
         f'--h={inner_height} --outer_diameter="{outer_diameter}" --inner_diameter="{inner_diameter}" --axle_diameter="{axle_diameter}" '
         f'--sides="{sides}" '
         f'--reinforcements="{reinforcements}" --reinforcement_height="{reinforcement_height}" '
-        f"--output={output('spool_din_80_half', thickness=thickness)}"
+        f"--output={output('spool-din-80-half', thickness=thickness)}"
     )
