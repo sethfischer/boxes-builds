@@ -20,4 +20,5 @@ Use
 .. code-block:: text
 
     poetry shell
+    invoke --list
     invoke task1 ... taskN
