@@ -208,3 +208,32 @@ def spool_din_80_half(c):
         f'--reinforcements="{reinforcements}" --reinforcement_height="{reinforcement_height}" '
         f"--output={output('spool-din-80-half', thickness=thickness)}"
     )
+
+
+@task(pre=[mkdir_build])
+def spool_din_50(c):
+    """DIN 50 wire spool.
+
+    Approximating spool type 50 defined in EN 60264-2-1:1996.
+    """
+    thickness = 3
+
+    inner_height = 38 - (2 * thickness)  # l2
+    outer_diameter = 50  # d1
+    inner_diameter = 32  # d2
+    axle_diameter = 11  # d3
+
+    sides = 16
+    reinforcements = 0
+    reinforcement_height = 0
+
+    c.run(
+        f"boxes Spool "
+        f"--thickness={thickness} "
+        f'--h={inner_height} '
+        f'--outer_diameter="{outer_diameter}" --inner_diameter="{inner_diameter}" '
+        f'--axle_diameter="{axle_diameter}" '
+        f'--sides="{sides}" '
+        f'--reinforcements="{reinforcements}" --reinforcement_height="{reinforcement_height}" '
+        f"--output={output('spool-din-50', thickness=thickness)}"
+    )
