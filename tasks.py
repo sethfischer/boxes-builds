@@ -99,9 +99,9 @@ def stationary_engine(c):
     c.run(
         f"boxes TrayLayout --outside=0 "
         f"--thickness={thickness} "
-        f'--h={height} --hi=0 --sx="{sections_x}" --sy="{sections_y}" '
+        f"--h={height} --hi=0 --sx={sections_x} --sy={sections_y} "
         f'--input="layouts/stationary_engine.txt" '
-        f'--Lid_style="overthetop" --Lid_height={lid_height} '
+        f"--Lid_style=overthetop --Lid_height={lid_height} "
         f"--output={output('stationary-engine', thickness=thickness)}"
     )
 
@@ -125,9 +125,9 @@ def spool_din_100(c):
     c.run(
         f"boxes Spool "
         f"--thickness={thickness} "
-        f'--h={inner_height} --outer_diameter="{outer_diameter}" --inner_diameter="{inner_diameter}" --axle_diameter="{axle_diameter}" '
-        f'--sides="{sides}" '
-        f'--reinforcements="{reinforcements}" --reinforcement_height="{reinforcement_height}" '
+        f"--h={inner_height} --outer_diameter={outer_diameter} --inner_diameter={inner_diameter} --axle_diameter={axle_diameter} "
+        f"--sides={sides} "
+        f"--reinforcements={reinforcements} --reinforcement_height={reinforcement_height} "
         f"--output={output('spool-din-100', thickness=thickness)}"
     )
 
@@ -151,9 +151,9 @@ def spool_din_100_half(c):
     c.run(
         f"boxes Spool "
         f"--thickness={thickness} "
-        f'--h={inner_height} --outer_diameter="{outer_diameter}" --inner_diameter="{inner_diameter}" --axle_diameter="{axle_diameter}" '
-        f'--sides="{sides}" '
-        f'--reinforcements="{reinforcements}" --reinforcement_height="{reinforcement_height}" '
+        f"--h={inner_height} --outer_diameter={outer_diameter} --inner_diameter={inner_diameter} --axle_diameter={axle_diameter} "
+        f"--sides={sides} "
+        f"--reinforcements={reinforcements} --reinforcement_height={reinforcement_height} "
         f"--output={output('spool-din-100-half', thickness=thickness)}"
     )
 
@@ -177,9 +177,9 @@ def spool_din_80(c):
     c.run(
         f"boxes Spool "
         f"--thickness={thickness} "
-        f'--h={inner_height} --outer_diameter="{outer_diameter}" --inner_diameter="{inner_diameter}" --axle_diameter="{axle_diameter}" '
-        f'--sides="{sides}" '
-        f'--reinforcements="{reinforcements}" --reinforcement_height="{reinforcement_height}" '
+        f"--h={inner_height} --outer_diameter={outer_diameter} --inner_diameter={inner_diameter} --axle_diameter={axle_diameter} "
+        f"--sides={sides} "
+        f"--reinforcements={reinforcements} --reinforcement_height={reinforcement_height} "
         f"--output={output('spool-din-80', thickness=thickness)}"
     )
 
@@ -203,9 +203,9 @@ def spool_din_80_half(c):
     c.run(
         f"boxes Spool "
         f"--thickness={thickness} "
-        f'--h={inner_height} --outer_diameter="{outer_diameter}" --inner_diameter="{inner_diameter}" --axle_diameter="{axle_diameter}" '
-        f'--sides="{sides}" '
-        f'--reinforcements="{reinforcements}" --reinforcement_height="{reinforcement_height}" '
+        f'--h={inner_height} --outer_diameter="{outer_diameter}" --inner_diameter={inner_diameter} --axle_diameter={axle_diameter} '
+        f"--sides={sides} "
+        f"--reinforcements={reinforcements} --reinforcement_height={reinforcement_height} "
         f"--output={output('spool-din-80-half', thickness=thickness)}"
     )
 
@@ -231,10 +231,10 @@ def spool_din_50(c):
         f"boxes Spool "
         f"--thickness={thickness} "
         f"--h={inner_height} "
-        f'--outer_diameter="{outer_diameter}" --inner_diameter="{inner_diameter}" '
+        f"--outer_diameter={outer_diameter} --inner_diameter={inner_diameter} "
         f'--axle_diameter="{axle_diameter}" '
-        f'--sides="{sides}" '
-        f'--reinforcements="{reinforcements}" --reinforcement_height="{reinforcement_height}" '
+        f"--sides={sides} "
+        f"--reinforcements={reinforcements} --reinforcement_height={reinforcement_height} "
         f"--output={output('spool-din-50', thickness=thickness)}"
     )
 
@@ -254,7 +254,7 @@ def burn_test(c):
         f"--burn={burn} "
         f"--thickness={thickness} "
         f"--x={inner_width} "
-        f'--step="{step}" '
-        f'--pairs="{pairs}" '
+        f"--step={step} "
+        f"--pairs={pairs} "
         f"--output={output('burn-test-0.060--0.130', thickness=thickness)}"
     )
