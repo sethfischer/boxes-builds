@@ -230,7 +230,7 @@ def spool_din_50(c):
     c.run(
         f"boxes Spool "
         f"--thickness={thickness} "
-        f'--h={inner_height} '
+        f"--h={inner_height} "
         f'--outer_diameter="{outer_diameter}" --inner_diameter="{inner_diameter}" '
         f'--axle_diameter="{axle_diameter}" '
         f'--sides="{sides}" '
