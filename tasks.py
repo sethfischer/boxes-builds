@@ -237,3 +237,24 @@ def spool_din_50(c):
         f'--reinforcements="{reinforcements}" --reinforcement_height="{reinforcement_height}" '
         f"--output={output('spool-din-50', thickness=thickness)}"
     )
+
+
+@task(pre=[mkdir_build])
+def burn_test(c):
+    """Burn test."""
+    burn = 0.06
+    thickness = 3
+
+    inner_width = 100
+    step = 0.01
+    pairs = 2
+
+    c.run(
+        f"boxes BurnTest "
+        f"--burn={burn} "
+        f"--thickness={thickness} "
+        f"--x={inner_width} "
+        f'--step="{step}" '
+        f'--pairs="{pairs}" '
+        f"--output={output('burn-test-0.060--0.130', thickness=thickness)}"
+    )
