@@ -241,7 +241,10 @@ def spool_din_50(c):
 
 @task(pre=[mkdir_build])
 def burn_test(c):
-    """Burn test."""
+    """Burn test.
+
+    Post-processing with Inkscape required to convert text to paths.
+    """
     burn = 0.06
     thickness = 3
 
