@@ -9,6 +9,8 @@ from invoke import task
 
 BUILD_DIR = "_build"
 
+BURN_GLUE_FIT = 0.1
+
 
 def output(slug: str, thickness: float = 3, extension="svg") -> Path:
     """Generate output pathname."""
@@ -270,3 +272,34 @@ def burn_test(c):
             f"--export-plain-svg={output(slug, thickness=thickness)} "
             f"--export-text-to-path {tmp_pathname}"
         )
+
+
+@task(pre=[mkdir_build])
+def card_box(c):
+    """Card box - two decks of 63×87.
+
+    For two decks of 60 cards 63mm wide × 87mm high.
+    """
+    card_width = 63
+    card_height = 87
+    height_of_deck = 23  # to suit 60 cards
+    margin = 1.5
+
+    section_width = card_width + (2 * margin)
+
+    thickness = 3
+
+    inner_depth = card_height + (2 * margin)
+    inner_height = height_of_deck
+    sections_left_to_right = f"{section_width}*2"
+
+    c.run(
+        f"boxes CardBox --outside=0 "
+        f"--burn={BURN_GLUE_FIT} "
+        f"--thickness={thickness} "
+        f"--y={inner_depth} "
+        f"--h={inner_height} "
+        f"--sx={sections_left_to_right} "
+        f"--add_lidtopper=1 "
+        f"--output={output('card-box', thickness=thickness)}"
+    )
