@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import os
+import tempfile
 from pathlib import Path
 
 from invoke import task
@@ -241,10 +242,7 @@ def spool_din_50(c):
 
 @task(pre=[mkdir_build])
 def burn_test(c):
-    """Burn test.
-
-    Post-processing with Inkscape required to convert text to paths.
-    """
+    """Burn test."""
     burn = 0.06
     thickness = 3
 
@@ -252,12 +250,25 @@ def burn_test(c):
     step = 0.01
     pairs = 2
 
-    c.run(
-        f"boxes BurnTest "
-        f"--burn={burn} "
-        f"--thickness={thickness} "
-        f"--x={inner_width} "
-        f"--step={step} "
-        f"--pairs={pairs} "
-        f"--output={output('burn-test-0.060--0.130', thickness=thickness)}"
-    )
+    slug = "burn-test-0.060--0.130"
+
+    with tempfile.TemporaryDirectory() as tmp:
+        tmp_pathname = os.path.join(tmp, "tmp.svg")
+
+        c.run(
+            f"boxes BurnTest "
+            f"--burn={burn} "
+            f"--thickness={thickness} "
+            f"--x={inner_width} "
+            f"--step={step} "
+            f"--pairs={pairs} "
+            f"--output={tmp_pathname}"
+        )
+
+        pathname = output(slug, thickness=thickness)
+
+        c.run(
+            f"inkscape "
+            f"--export-plain-svg={pathname} "
+            f"--export-text-to-path {tmp_pathname}"
+        )
