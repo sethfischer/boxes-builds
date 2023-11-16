@@ -265,10 +265,8 @@ def burn_test(c):
             f"--output={tmp_pathname}"
         )
 
-        pathname = output(slug, thickness=thickness)
-
         c.run(
             f"inkscape "
-            f"--export-plain-svg={pathname} "
+            f"--export-plain-svg={output(slug, thickness=thickness)} "
             f"--export-text-to-path {tmp_pathname}"
         )
