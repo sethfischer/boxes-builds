@@ -17,8 +17,16 @@ Install
 Use
 ---
 
+Execute invoke tasks:
+
 .. code-block:: text
 
     poetry shell
     invoke --list
     invoke task1 ... taskN
+
+Execute a custom generator:
+
+.. code-block:: text
+
+    BOXES_GENERATOR_PATH=generators boxes BurnTestCustom --date=1 --id="my identifier"
