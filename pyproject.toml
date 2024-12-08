@@ -7,8 +7,8 @@ license = "MIT"
 readme = "README.rst"
 
 [tool.poetry.dependencies]
-python = "^3.9"
-boxes = {git = "https://github.com/florianfesti/boxes.git", rev = "5fc17de321f6a1491e0a9b1ce7535c3e73e9b062"}
+python = "^3.11"
+boxes = {git = "https://github.com/florianfesti/boxes.git", rev = "ae6e7b88e3fc76ebfe166cda44154a8515f306b2"}
 invoke = "^2.0.0"
 
 [tool.poetry.group.dev.dependencies]
