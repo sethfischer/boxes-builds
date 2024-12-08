@@ -93,19 +93,26 @@ def stationary_engine(c):
     """Stationary engine box."""
     thickness = 3
 
-    height = 80
+    height = 86
     sections_x = "65:90"
     sections_y = "25:55:130"
 
     lid_height = 10
+    slug = "stationary-engine"
 
     c.run(
         f"boxes TrayLayout --outside=0 "
         f"--thickness={thickness} "
         f"--h={height} --hi=0 --sx={sections_x} --sy={sections_y} "
         f'--input="layouts/stationary_engine.txt" '
-        f"--Lid_style=overthetop --Lid_height={lid_height} "
-        f"--output={output('stationary-engine', thickness=thickness)}"
+        f"--Lid_style=overthetop --Lid_height={lid_height} --Lid_play=0.2 "
+        f"--output={output(slug, thickness=thickness)}"
+    )
+
+    c.run(
+        "boxes ABox --outside=0 "
+        "--x=222.5 --y=164.5 --h=59 "
+        f"--output={output(slug + '-shell', thickness=thickness)}"
     )
 
 
