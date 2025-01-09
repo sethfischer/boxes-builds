@@ -8,7 +8,7 @@ readme = "README.rst"
 
 [tool.poetry.dependencies]
 python = "^3.11"
-boxes = {git = "https://github.com/florianfesti/boxes.git", rev = "ae6e7b88e3fc76ebfe166cda44154a8515f306b2"}
+boxes = {git = "https://github.com/florianfesti/boxes.git", rev = "d83609ef9f481337e4770dfbca92425cc61d7fe5"}
 invoke = "^2.0.0"
 
 [tool.poetry.group.dev.dependencies]
