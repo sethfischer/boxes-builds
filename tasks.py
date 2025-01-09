@@ -136,6 +136,34 @@ def stationary_engine(c):
 
 
 @task(pre=[mkdir_build])
+def meccano_7531(c):
+    """Meccano set 7531 box."""
+    thickness = 3
+
+    height = 60
+    sections_x = "72:47:41:80"
+    sections_y = "160"
+
+    lid_height = 10
+    slug = "meccano-7531"
+
+    c.run(
+        f"boxes TrayLayout --outside=0 "
+        f"--thickness={thickness} "
+        f"--h={height} --hi=0 --sx={sections_x} --sy={sections_y} "
+        f'--input="layouts/{slug}.txt" '
+        f"--Lid_style=overthetop --Lid_height={lid_height} --Lid_play=0.2 "
+        f"--output={output(slug, thickness=thickness)}"
+    )
+
+    c.run(
+        "boxes ABox --outside=0 "
+        "--x=270 --y=171 --h=30 "
+        f"--output={output(slug + '-shell', thickness=thickness)}"
+    )
+
+
+@task(pre=[mkdir_build])
 def spool_din_100(c):
     """DIN 100 wire spool.
 
