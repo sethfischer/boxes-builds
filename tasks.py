@@ -310,3 +310,22 @@ def card_box(c):
         f"--add_lidtopper=1 "
         f"--output={output('card-box', thickness=thickness)}"
     )
+
+
+@task(pre=[mkdir_build])
+def box_book_lego(c):
+    """Box book for custom Lego set."""
+    x = 130
+    y = 35
+    h = 160
+
+    thickness = 3
+
+    c.run(
+        f"boxes FlexBook "
+        f"--thickness={thickness} "
+        f"--x={x} "
+        f"--y={y} "
+        f"--h={h} "
+        f"--output={output('box-book-lego', thickness=thickness)}"
+    )
