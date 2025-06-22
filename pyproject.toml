@@ -1,5 +1,6 @@
 [tool.poetry]
 name = "boxes-builds"
+package-mode = false
 version = "0.1.0"
 description = "Record of boxes built with florianfesti's boxes"
 authors = ["Seth Fischer <seth@fischer.nz>"]
