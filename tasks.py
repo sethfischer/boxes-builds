@@ -54,6 +54,25 @@ def sharpening_stone(c):
 
 
 @task(pre=[mkdir_build])
+def blade_disposal_box(c):
+    """Blade disposal box."""
+    thickness = 3
+
+    internal_x = 70
+    internal_y = 50
+    internal_h = 40
+    play = 0
+
+    c.run(
+        f"boxes TwoPiece --outside=0 "
+        f"--thickness={thickness} "
+        f"--x={internal_x} --y={internal_y} --h={internal_h} "
+        f"--play={play} "
+        f"--output={output('blade-disposal-box', thickness=thickness)}"
+    )
+
+
+@task(pre=[mkdir_build])
 def slip_stone(c):
     """Slip stone two piece box."""
     thickness = 3
