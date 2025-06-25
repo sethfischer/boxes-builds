@@ -10,7 +10,7 @@ Install
 
 .. code-block:: text
 
-    poetry env use python3.9
+    poetry env use python3.12
     poetry install
 
 
@@ -21,9 +21,8 @@ Execute invoke tasks:
 
 .. code-block:: text
 
-    poetry shell
-    invoke --list
-    invoke task1 ... taskN
+    poetry run invoke --list
+    poetry run invoke task1 ... taskN
 
 Execute a custom generator:
 
