@@ -111,6 +111,8 @@ def ottodiy(c):
 @task(pre=[mkdir_build])
 def stationary_engine(c):
     """Stationary engine box."""
+    slug = "stationary-engine"
+
     thickness = 3
 
     height = 86
@@ -118,13 +120,12 @@ def stationary_engine(c):
     sections_y = "25:55:130"
 
     lid_height = 10
-    slug = "stationary-engine"
 
     c.run(
         f"boxes TrayLayout --outside=0 "
         f"--thickness={thickness} "
         f"--h={height} --hi=0 --sx={sections_x} --sy={sections_y} "
-        f'--input="layouts/stationary_engine.txt" '
+        f'--input="layouts/{slug}.txt" '
         f"--Lid_style=overthetop --Lid_height={lid_height} --Lid_play=0.2 "
         f"--output={output(slug, thickness=thickness)}"
     )
