@@ -112,8 +112,8 @@ dev = ["lxml", "mypy", "pre-commit", "pytest (>=8.1.1)", "types-Markdown"]
 [package.source]
 type = "git"
 url = "https://github.com/florianfesti/boxes.git"
-reference = "d83609ef9f481337e4770dfbca92425cc61d7fe5"
-resolved_reference = "d83609ef9f481337e4770dfbca92425cc61d7fe5"
+reference = "065581c22d22fc17240ce4df1ba3a163ddb7a422"
+resolved_reference = "065581c22d22fc17240ce4df1ba3a163ddb7a422"
 
 [[package]]
 name = "certifi"
@@ -864,4 +864,4 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.12"
-content-hash = "1e89e8c1abbfe9c44245387eccb0a49ad426aca55ac8a3fec4e6e57a65d02d64"
+content-hash = "de2da16387bd11c0090f6c20fc7785c0f061b1a49d1ddb71bcaa5380a220c1b9"
