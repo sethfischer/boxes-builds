@@ -1,4 +1,5 @@
 """Record of boxes.py builds."""
+
 from __future__ import annotations
 
 import os
@@ -375,4 +376,56 @@ def box_book_lego(c):
         f"--y={y} "
         f"--h={h} "
         f"--output={output('box-book-lego', thickness=thickness)}"
+    )
+
+
+@task(pre=[mkdir_build])
+def cell_storage_aa(c):
+    """AA cell storage."""
+    thickness = 3
+    tolerance = 0.5
+
+    x = 2 * 42 - 0.5 - tolerance  # 2 gridfinity units
+    y = (3 * 42 - 0.5) - thickness * 2 - tolerance  # 3 gridfinity units
+    additional_bottom = 1
+    cell_diameter = 14
+    cell_height = 50
+    minspace = 5
+
+    c.run(
+        f"boxes PaintStorage "
+        f"--thickness={thickness} "
+        f"--x={x} "
+        f"--y={y} "
+        f"--candiameter={cell_diameter} "
+        f"--canheight={cell_height} "
+        f"--minspace={minspace} "
+        f"--additional_bottom={additional_bottom} "
+        f"--output={output('cell-storage-aa', thickness=thickness)}"
+    )
+
+
+@task(pre=[mkdir_build])
+def cell_storage_aaa(c):
+    """AAA cell storage."""
+    thickness = 3
+    tolerance = 0.5
+
+    x = 2 * 42 - 0.5 - tolerance  # 2 gridfinity units
+    y = (3 * 42 - 0.5) - thickness * 2 - tolerance  # 3 gridfinity units
+    additional_bottom = 1
+    cell_diameter = 11
+    cell_height = 44
+    minspace = 5
+
+    c.run(
+        f"boxes PaintStorage "
+        f"--thickness={thickness} "
+        f"--x={x} "
+        f"--y={y} "
+        f"--candiameter={cell_diameter} "
+        f"--canheight={cell_height} "
+        f"--minspace={minspace} "
+        f"--additional_bottom={additional_bottom} "
+        f"--output={output('cell-storage-aaa', thickness=thickness)}"
     )
