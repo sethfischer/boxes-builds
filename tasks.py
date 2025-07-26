@@ -389,7 +389,7 @@ def cell_storage_aa(c):
     x = 2 * 42 - 0.5 - tolerance  # 2 gridfinity units
     y = (3 * 42 - 0.5) - thickness * 2 - tolerance  # 3 gridfinity units
     additional_bottom = 1
-    cell_diameter = 14
+    cell_diameter = 15
     cell_height = 50
     minspace = 5
 
