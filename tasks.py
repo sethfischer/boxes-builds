@@ -138,6 +138,28 @@ def stationary_engine(c):
 
 
 @task(pre=[mkdir_build])
+def lego_50006(c):
+    """Box for Lego set 50006 Legends of Chima."""
+    slug = "lego-50006"
+
+    thickness = 3
+
+    height = 54
+    width = 272
+    depth = 192
+
+    lid_height_mm = height / 2
+    lid_height = lid_height_mm / thickness
+
+    c.run(
+        "boxes ABox --outside=0 "
+        f"--Lid_style=overthetop --Lid_height={lid_height} --Lid_play=0.2 "
+        f"--x={width} --y={depth} --h={height} "
+        f"--output={output(slug, thickness=thickness)}"
+    )
+
+
+@task(pre=[mkdir_build])
 def meccano_7531(c):
     """Meccano set 7531 box."""
     thickness = 3
