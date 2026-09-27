@@ -102,8 +102,8 @@ doc = ["sphinx (>=8.0.2)"]
 [package.source]
 type = "git"
 url = "https://github.com/florianfesti/boxes.git"
-reference = "065581c22d22fc17240ce4df1ba3a163ddb7a422"
-resolved_reference = "065581c22d22fc17240ce4df1ba3a163ddb7a422"
+reference = "68ef26a853df888760879da5f481c4be10dbdd6a"
+resolved_reference = "68ef26a853df888760879da5f481c4be10dbdd6a"
 
 [[package]]
 name = "click"
@@ -513,4 +513,4 @@ test = ["pytest", "pytest-cov", "scipy-doctest"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.12"
-content-hash = "f897046a0eae98d6829c27e9d432441dae896518fd80d1490b9caa69ab614a95"
+content-hash = "7fb29189dafb7437129200cbb4c11f11262954cc888bb38eee42a6387f7b96e2"
