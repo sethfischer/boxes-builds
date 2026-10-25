@@ -9,8 +9,7 @@ readme = "README.rst"
 
 [tool.poetry.dependencies]
 python = "^3.12"
-# Note: boxes commit 27d444bf1f42a963933e8e87cdc366c196875831 breaks traylayout
-boxes = {git = "https://github.com/florianfesti/boxes.git", rev = "68ef26a853df888760879da5f481c4be10dbdd6a"}
+boxes = {git = "https://github.com/florianfesti/boxes.git", rev = "84e392b39191d81db6d381bf1c20a7fc6ae0c8ce"}
 invoke = "^3.0.3"
 
 [tool.poetry.group.dev.dependencies]
