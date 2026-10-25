@@ -13,8 +13,8 @@ boxes = {git = "https://github.com/florianfesti/boxes.git", rev = "84e392b39191d
 invoke = "^3.0.3"
 
 [tool.poetry.group.dev.dependencies]
-black = "^26.5.1"
-isort = "^9.0.1"
+black = "^26.10.1"
+isort = "^9.0.2"
 
 [build-system]
 requires = ["poetry-core"]
